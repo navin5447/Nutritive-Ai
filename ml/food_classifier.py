@@ -48,8 +48,19 @@ class FoodClassifier:
             if self.api_key:
                 try:
                     genai.configure(api_key=self.api_key)
-                    self.model = genai.GenerativeModel('gemini-1.5-flash')
-                    print("✅ Gemini AI Vision initialized successfully")
+                    # Try different model names in order of preference
+                    model_names = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-pro-vision', 'gemini-pro']
+                    model_initialized = False
+                    for model_name in model_names:
+                        try:
+                            self.model = genai.GenerativeModel(model_name)
+                            print(f"✅ Gemini AI Vision initialized successfully with {model_name}")
+                            model_initialized = True
+                            break
+                        except Exception as model_error:
+                            continue
+                    if not model_initialized:
+                        raise Exception("No available Gemini model found")
                 except Exception as e:
                     print(f"⚠️ Gemini initialization failed: {e}")
                     self.use_gemini = False
