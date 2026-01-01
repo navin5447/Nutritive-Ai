@@ -23,9 +23,9 @@ UPLOAD_DIR = Path(__file__).parent.parent.parent / "temp_uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 
 # Initialize ML modules - will use environment variables when available
-food_classifier = None
-portion_estimator = None
-nutrition_mapper = None
+food_classifier: Optional[FoodClassifier] = None
+portion_estimator: Optional[PortionEstimator] = None
+nutrition_mapper: Optional[NutritionMapper] = None
 
 def get_ml_modules():
     """Lazy initialization of ML modules to ensure environment variables are loaded"""
@@ -54,7 +54,10 @@ async def recognize_food(
     """
     try:
         # Get ML modules (lazy initialization)
-        food_classifier, portion_estimator, nutrition_mapper = get_ml_modules()
+        classifier, estimator, mapper = get_ml_modules()
+        assert classifier is not None
+        assert estimator is not None
+        assert mapper is not None
         
         # Validate file type
         if not file.content_type or not file.content_type.startswith('image/'):
@@ -69,13 +72,13 @@ async def recognize_food(
             shutil.copyfileobj(file.file, buffer)
         
         # Step 1: Classify food
-        detected_foods = food_classifier.detect_multiple_foods(str(image_path))
+        detected_foods = classifier.detect_multiple_foods(str(image_path))
         
         if not detected_foods:
             raise HTTPException(status_code=400, detail="No food detected in image")
         
         # Step 2: Estimate portions
-        portions = portion_estimator.estimate_multiple_portions(detected_foods, str(image_path))
+        portions = estimator.estimate_multiple_portions(detected_foods, str(image_path))
         
         # Step 3: Add portion estimates to detected foods
         for food in detected_foods:
@@ -89,24 +92,24 @@ async def recognize_food(
         
         # Step 4: Calculate nutrition for each food
         for food in detected_foods:
-            nutrition = nutrition_mapper.calculate_nutrition(
+            nutrition = mapper.calculate_nutrition(
                 food['food_id'],
                 food['estimated_grams']
             )
             food['nutrition'] = nutrition
         
         # Step 5: Calculate total nutrition
-        total_nutrition = nutrition_mapper.calculate_total_nutrition(detected_foods)
+        total_nutrition = mapper.calculate_total_nutrition(detected_foods)
         
         # Step 6: Generate health alerts (personalized if user_id provided)
         user_profile = None  # TODO: Fetch from database if user_id provided
-        health_alerts = nutrition_mapper.generate_health_alerts(total_nutrition, user_profile)
+        health_alerts = mapper.generate_health_alerts(total_nutrition, user_profile)
         
         # Step 7: Generate explanation
-        explanation = nutrition_mapper.generate_explanation(detected_foods, portions)
+        explanation = mapper.generate_explanation(detected_foods, portions)
         
         # Step 8: Assess image quality
-        image_quality = food_classifier.assess_image_quality(str(image_path))
+        image_quality = classifier.assess_image_quality(str(image_path))
         
         # Clean up uploaded file (optional - keep for history)
         # image_path.unlink()
@@ -135,10 +138,11 @@ async def get_supported_foods():
         List of food items with basic information
     """
     # Get ML modules (lazy initialization)
-    _, _, nutrition_mapper = get_ml_modules()
+    _, _, mapper = get_ml_modules()
+    assert mapper is not None
     
     foods = []
-    for food_id, food_data in nutrition_mapper.food_database.items():
+    for food_id, food_data in mapper.food_database.items():
         foods.append({
             "id": food_id,
             "name": food_data.get('name', food_id.title()),
@@ -166,9 +170,10 @@ async def get_food_info(food_id: str):
         Complete food nutrition and serving information
     """
     # Get ML modules (lazy initialization)
-    _, _, nutrition_mapper = get_ml_modules()
+    _, _, mapper = get_ml_modules()
+    assert mapper is not None
     
-    food_data = nutrition_mapper.food_database.get(food_id)
+    food_data = mapper.food_database.get(food_id)
     
     if not food_data:
         raise HTTPException(status_code=404, detail=f"Food '{food_id}' not found")

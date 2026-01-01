@@ -14,7 +14,7 @@ except ImportError:
     print("Warning: OpenCV not available. Using simplified image processing.")
 
 try:
-    import google.generativeai as genai
+    import google.generativeai as genai  # type: ignore
     from PIL import Image
     GEMINI_AVAILABLE = True
 except ImportError:
