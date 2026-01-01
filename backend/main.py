@@ -24,7 +24,12 @@ app = FastAPI(title="Nutrition AI")
 # CORS config for local dev
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update this with your frontend URL in production
+    allow_origins=[
+        "*",
+        "http://localhost:3000",
+        "https://nutritive-ai.vercel.app",
+        "https://*.vercel.app"
+    ],  # Update this with your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
