@@ -5,6 +5,7 @@ import axios from 'axios';
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 console.log('🌐 API Base URL:', BASE_URL);
+console.log('🔍 Environment check:', import.meta.env.VITE_API_URL);
 
 export const uploadImage = (file) => {
   const formData = new FormData();
