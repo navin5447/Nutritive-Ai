@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+numpy
+opencv-python
+Pillow
+httpx
+google-generativeai
+python-dotenv
+# For ML options (add at least one):
+# tensorflow
+# torch
+# google-cloud-vision (optional)
+
+

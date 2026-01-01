@@ -1,0 +1,575 @@
+{
+  "foods": [
+    {
+      "id": "idli",
+      "name": "Idli",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 58,
+        "protein": 2.1,
+        "carbs": 12.6,
+        "fat": 0.1,
+        "fiber": 0.8,
+        "sugar": 0.5,
+        "sodium": 5
+      },
+      "standard_serving": {"size": "1 piece", "grams": 40, "calories": 23},
+      "health_tags": ["low_fat", "low_calorie", "vegetarian"]
+    },
+    {
+      "id": "dosa",
+      "name": "Dosa",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 168,
+        "protein": 3.6,
+        "carbs": 25.8,
+        "fat": 5.2,
+        "fiber": 1.5,
+        "sugar": 0.8,
+        "sodium": 450
+      },
+      "standard_serving": {"size": "1 piece", "grams": 60, "calories": 101},
+      "health_tags": ["vegetarian"]
+    },
+    {
+      "id": "masala_dosa",
+      "name": "Masala Dosa",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 220,
+        "protein": 4.2,
+        "carbs": 32.5,
+        "fat": 8.5,
+        "fiber": 2.1,
+        "sugar": 1.2,
+        "sodium": 520
+      },
+      "standard_serving": {"size": "1 piece", "grams": 150, "calories": 330},
+      "health_tags": ["vegetarian"],
+      "warnings": ["high_sodium"]
+    },
+    {
+      "id": "biryani",
+      "name": "Biryani",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 175,
+        "protein": 7.5,
+        "carbs": 28.5,
+        "fat": 3.8,
+        "fiber": 1.2,
+        "sugar": 1.5,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "1 plate", "grams": 300, "calories": 525},
+      "health_tags": ["high_protein"]
+    },
+    {
+      "id": "chapati",
+      "name": "Chapati",
+      "category": "bread",
+      "per_100g": {
+        "calories": 120,
+        "protein": 3.1,
+        "carbs": 25.9,
+        "fat": 0.4,
+        "fiber": 2.7,
+        "sugar": 0.3,
+        "sodium": 8
+      },
+      "standard_serving": {"size": "1 piece", "grams": 40, "calories": 48},
+      "health_tags": ["low_fat", "whole_grain"]
+    },
+    {
+      "id": "rice",
+      "name": "White Rice",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 130,
+        "protein": 2.7,
+        "carbs": 28.2,
+        "fat": 0.3,
+        "fiber": 0.4,
+        "sugar": 0.1,
+        "sodium": 1
+      },
+      "standard_serving": {"size": "1 cup", "grams": 158, "calories": 205},
+      "health_tags": ["low_fat"]
+    },
+    {
+      "id": "dal",
+      "name": "Dal",
+      "category": "curry",
+      "per_100g": {
+        "calories": 92,
+        "protein": 6.8,
+        "carbs": 12.5,
+        "fat": 1.8,
+        "fiber": 4.2,
+        "sugar": 0.8,
+        "sodium": 320
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 184},
+      "health_tags": ["high_protein", "high_fiber"]
+    },
+    {
+      "id": "sambar",
+      "name": "Sambar",
+      "category": "curry",
+      "per_100g": {
+        "calories": 45,
+        "protein": 2.5,
+        "carbs": 7.8,
+        "fat": 0.8,
+        "fiber": 2.5,
+        "sugar": 1.2,
+        "sodium": 280
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 90},
+      "health_tags": ["low_calorie", "high_fiber"]
+    },
+    {
+      "id": "vada",
+      "name": "Medu Vada",
+      "category": "snack",
+      "per_100g": {
+        "calories": 235,
+        "protein": 8.2,
+        "carbs": 28.5,
+        "fat": 9.8,
+        "fiber": 3.5,
+        "sugar": 1.2,
+        "sodium": 450
+      },
+      "standard_serving": {"size": "1 piece", "grams": 45, "calories": 106},
+      "health_tags": ["high_protein"],
+      "warnings": ["high_fat", "fried"]
+    },
+    {
+      "id": "pongal",
+      "name": "Pongal",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 152,
+        "protein": 4.2,
+        "carbs": 22.5,
+        "fat": 4.5,
+        "fiber": 1.8,
+        "sugar": 0.5,
+        "sodium": 320
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 304},
+      "health_tags": ["vegetarian"]
+    },
+    {
+      "id": "paneer_curry",
+      "name": "Paneer Curry",
+      "category": "curry",
+      "per_100g": {
+        "calories": 158,
+        "protein": 10.2,
+        "carbs": 8.5,
+        "fat": 9.8,
+        "fiber": 1.5,
+        "sugar": 3.2,
+        "sodium": 420
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 250, "calories": 395},
+      "health_tags": ["high_protein"],
+      "warnings": ["high_fat"]
+    },
+    {
+      "id": "chicken_curry",
+      "name": "Chicken Curry",
+      "category": "curry",
+      "per_100g": {
+        "calories": 165,
+        "protein": 12.8,
+        "carbs": 6.5,
+        "fat": 10.2,
+        "fiber": 1.2,
+        "sugar": 2.5,
+        "sodium": 480
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 300, "calories": 495},
+      "health_tags": ["high_protein"],
+      "warnings": ["high_fat"]
+    },
+    {
+      "id": "samosa",
+      "name": "Samosa",
+      "category": "snack",
+      "per_100g": {
+        "calories": 262,
+        "protein": 3.5,
+        "carbs": 38.5,
+        "fat": 10.5,
+        "fiber": 2.8,
+        "sugar": 1.5,
+        "sodium": 520
+      },
+      "standard_serving": {"size": "1 piece", "grams": 50, "calories": 131},
+      "warnings": ["high_fat", "fried"]
+    },
+    {
+      "id": "paratha",
+      "name": "Paratha",
+      "category": "bread",
+      "per_100g": {
+        "calories": 320,
+        "protein": 6.5,
+        "carbs": 42.5,
+        "fat": 13.8,
+        "fiber": 2.5,
+        "sugar": 1.2,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "1 piece", "grams": 60, "calories": 192},
+      "warnings": ["high_fat", "high_calorie"]
+    },
+    {
+      "id": "upma",
+      "name": "Upma",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 112,
+        "protein": 2.8,
+        "carbs": 18.5,
+        "fat": 3.2,
+        "fiber": 1.5,
+        "sugar": 0.8,
+        "sodium": 320
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 224},
+      "health_tags": ["moderate_calories"]
+    },
+    {
+      "id": "roti",
+      "name": "Roti",
+      "category": "bread",
+      "per_100g": {
+        "calories": 297,
+        "protein": 11.0,
+        "carbs": 45.5,
+        "fat": 8.9,
+        "fiber": 6.7,
+        "sugar": 0.5,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "1 piece", "grams": 40, "calories": 119},
+      "health_tags": ["high_fiber", "vegetarian"]
+    },
+    {
+      "id": "poha",
+      "name": "Poha",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 130,
+        "protein": 2.6,
+        "carbs": 23.0,
+        "fat": 3.5,
+        "fiber": 1.2,
+        "sugar": 1.0,
+        "sodium": 250
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 150, "calories": 195},
+      "health_tags": ["light", "vegetarian"]
+    },
+    {
+      "id": "curd",
+      "name": "Curd (Yogurt)",
+      "category": "dairy",
+      "per_100g": {
+        "calories": 98,
+        "protein": 11.0,
+        "carbs": 3.4,
+        "fat": 4.3,
+        "fiber": 0.0,
+        "sugar": 3.2,
+        "sodium": 364
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 150, "calories": 147},
+      "health_tags": ["high_protein", "probiotic", "vegetarian"]
+    },
+    {
+      "id": "raita",
+      "name": "Raita",
+      "category": "side_dish",
+      "per_100g": {
+        "calories": 50,
+        "protein": 2.8,
+        "carbs": 5.5,
+        "fat": 1.8,
+        "fiber": 0.5,
+        "sugar": 4.2,
+        "sodium": 180
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 100, "calories": 50},
+      "health_tags": ["low_calorie", "probiotic", "vegetarian"]
+    },
+    {
+      "id": "pulao",
+      "name": "Veg Pulao",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 180,
+        "protein": 4.2,
+        "carbs": 28.5,
+        "fat": 5.8,
+        "fiber": 2.1,
+        "sugar": 1.5,
+        "sodium": 420
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 360},
+      "health_tags": ["vegetarian"]
+    },
+    {
+      "id": "naan",
+      "name": "Naan",
+      "category": "bread",
+      "per_100g": {
+        "calories": 310,
+        "protein": 8.7,
+        "carbs": 50.6,
+        "fat": 7.5,
+        "fiber": 2.2,
+        "sugar": 5.2,
+        "sodium": 480
+      },
+      "standard_serving": {"size": "1 piece", "grams": 90, "calories": 279},
+      "health_tags": ["vegetarian"]
+    },
+    {
+      "id": "palak_paneer",
+      "name": "Palak Paneer",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 165,
+        "protein": 10.5,
+        "carbs": 6.8,
+        "fat": 11.2,
+        "fiber": 2.5,
+        "sugar": 2.1,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 330},
+      "health_tags": ["high_protein", "high_iron", "vegetarian"]
+    },
+    {
+      "id": "rajma",
+      "name": "Rajma (Kidney Beans Curry)",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 140,
+        "protein": 9.0,
+        "carbs": 22.8,
+        "fat": 0.5,
+        "fiber": 7.4,
+        "sugar": 0.3,
+        "sodium": 350
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 280},
+      "health_tags": ["high_protein", "high_fiber", "vegetarian"]
+    },
+    {
+      "id": "chole",
+      "name": "Chole (Chickpea Curry)",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 164,
+        "protein": 8.9,
+        "carbs": 27.4,
+        "fat": 2.6,
+        "fiber": 7.6,
+        "sugar": 4.8,
+        "sodium": 400
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 328},
+      "health_tags": ["high_protein", "high_fiber", "vegetarian"]
+    },
+    {
+      "id": "tandoori_chicken",
+      "name": "Tandoori Chicken",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 148,
+        "protein": 27.6,
+        "carbs": 0.0,
+        "fat": 3.5,
+        "fiber": 0.0,
+        "sugar": 0.0,
+        "sodium": 520
+      },
+      "standard_serving": {"size": "1 piece", "grams": 150, "calories": 222},
+      "health_tags": ["high_protein", "low_carb", "keto_friendly"]
+    },
+    {
+      "id": "fish_curry",
+      "name": "Fish Curry",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 132,
+        "protein": 18.5,
+        "carbs": 3.2,
+        "fat": 5.1,
+        "fiber": 0.8,
+        "sugar": 1.2,
+        "sodium": 460
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 264},
+      "health_tags": ["high_protein", "omega3", "low_carb"]
+    },
+    {
+      "id": "egg_curry",
+      "name": "Egg Curry",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 154,
+        "protein": 12.8,
+        "carbs": 4.5,
+        "fat": 9.8,
+        "fiber": 1.2,
+        "sugar": 2.1,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 308},
+      "health_tags": ["high_protein", "moderate_carb"]
+    },
+    {
+      "id": "dal_tadka",
+      "name": "Dal Tadka",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 104,
+        "protein": 7.2,
+        "carbs": 15.8,
+        "fat": 1.5,
+        "fiber": 4.2,
+        "sugar": 0.5,
+        "sodium": 340
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 200, "calories": 208},
+      "health_tags": ["high_protein", "high_fiber", "vegetarian"]
+    },
+    {
+      "id": "puri",
+      "name": "Puri",
+      "category": "bread",
+      "per_100g": {
+        "calories": 375,
+        "protein": 7.5,
+        "carbs": 51.2,
+        "fat": 15.8,
+        "fiber": 2.8,
+        "sugar": 0.8,
+        "sodium": 420
+      },
+      "standard_serving": {"size": "1 piece", "grams": 25, "calories": 94},
+      "health_tags": ["vegetarian"],
+      "warnings": ["high_fat", "deep_fried"]
+    },
+    {
+      "id": "aloo_paratha",
+      "name": "Aloo Paratha",
+      "category": "breakfast",
+      "per_100g": {
+        "calories": 260,
+        "protein": 5.8,
+        "carbs": 38.5,
+        "fat": 9.2,
+        "fiber": 3.2,
+        "sugar": 1.2,
+        "sodium": 450
+      },
+      "standard_serving": {"size": "1 piece", "grams": 100, "calories": 260},
+      "health_tags": ["vegetarian"]
+    },
+    {
+      "id": "pakora",
+      "name": "Pakora (Mixed Veg)",
+      "category": "snack",
+      "per_100g": {
+        "calories": 285,
+        "protein": 5.2,
+        "carbs": 28.5,
+        "fat": 16.8,
+        "fiber": 2.5,
+        "sugar": 2.1,
+        "sodium": 380
+      },
+      "standard_serving": {"size": "4 pieces", "grams": 80, "calories": 228},
+      "health_tags": ["vegetarian"],
+      "warnings": ["high_fat", "deep_fried"]
+    },
+    {
+      "id": "bhaji",
+      "name": "Bhaji (Veg)",
+      "category": "side_dish",
+      "per_100g": {
+        "calories": 95,
+        "protein": 3.2,
+        "carbs": 12.5,
+        "fat": 4.2,
+        "fiber": 3.5,
+        "sugar": 3.8,
+        "sodium": 280
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 150, "calories": 143},
+      "health_tags": ["vegetarian", "high_fiber"]
+    },
+    {
+      "id": "butter_chicken",
+      "name": "Butter Chicken",
+      "category": "main_course",
+      "per_100g": {
+        "calories": 213,
+        "protein": 15.2,
+        "carbs": 6.8,
+        "fat": 14.5,
+        "fiber": 0.8,
+        "sugar": 4.2,
+        "sodium": 520
+      },
+      "standard_serving": {"size": "1 bowl", "grams": 250, "calories": 533},
+      "health_tags": ["high_protein"],
+      "warnings": ["high_fat"]
+    },
+    {
+      "id": "gulab_jamun",
+      "name": "Gulab Jamun",
+      "category": "dessert",
+      "per_100g": {
+        "calories": 375,
+        "protein": 4.2,
+        "carbs": 58.5,
+        "fat": 14.2,
+        "fiber": 0.5,
+        "sugar": 52.8,
+        "sodium": 85
+      },
+      "standard_serving": {"size": "2 pieces", "grams": 60, "calories": 225},
+      "health_tags": ["vegetarian"],
+      "warnings": ["high_sugar", "high_calorie"]
+    },
+    {
+      "id": "jalebi",
+      "name": "Jalebi",
+      "category": "dessert",
+      "per_100g": {
+        "calories": 448,
+        "protein": 1.8,
+        "carbs": 78.5,
+        "fat": 13.2,
+        "fiber": 0.3,
+        "sugar": 68.5,
+        "sodium": 42
+      },
+      "standard_serving": {"size": "2 pieces", "grams": 50, "calories": 224},
+      "health_tags": ["vegetarian"],
+      "warnings": ["high_sugar", "high_calorie"]
+    }
+  ]
+}
+
+
